@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8"> 
+    <title>LogIn and SignUp Page</title> 
+    <link rel="stylesheet" type="text/css" href="abc.css"> 
+    <style>
+        #switchButton {
+            margin: 20px auto;
+            display: block;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #switchButton:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head> 
+<body> 
+    <h1 align="center" id="title">CAR RENTAL SYSTEM</h1> 
+    <div class="box"> 
+        <div class="page"> 
+            <div class="header"> 
+                <a id="login" class="active" href="#login">login</a> 
+                <a id="signup" href="#signup">signup</a> 
+            </div> 
+            <div id="errorMsg"></div> 
+            <div class="content"> 
+                <form class="login" name="loginForm" onsubmit="return validateLoginForm()" method="POST" > 
+                    <input type="text" name="name" id="logName" placeholder="Username*"> 
+                    <input type="password" name="password" id="logPassword" placeholder="Password*"> 
+                    <div id="check"> 
+                        <input type="checkbox" id="remember"> 
+                        <label for="remember" id="remember-label">Remember me</label> 
+                    </div> 
+                    <br>
+                    <br> 
+                    <input type="submit" value="Login" id="login-btn"> 
+                    <a href="#" id="forgot-password">Forgot Password?</a> 
+                </form> 
+                <form class="signup" name="signupForm" onsubmit="return validateSignupForm()" method="POST"> 
+                    <input type="email" name="email" id="signEmail" placeholder="Email*"> 
+                    <input type="text" name="name" id="signName" placeholder="Username*"> 
+                    <input type="password" name="password" id="signPassword" placeholder="Password*">
+                    <br> 
+                    <input type="submit" value="SignUp" id="signup-btn"> 
+                </form> 
+            </div> 
+        </div> 
+    </div> 
+    <button id="switchButton">Switch to Spanish</button>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script> 
+    <script src="abc.js"></script> 
+    <script>
+        document.getElementById('switchButton').addEventListener('click', function() {
+            const texts = {
+                'en': {
+                    'title': 'CAR RENTAL SYSTEM',
+                    'login': 'login',
+                    'signup': 'signup',
+                    'logName': 'Username*',
+                    'logPassword': 'Password*',
+                    'remember': 'Remember me',
+                    'login-btn': 'Login',
+                    'forgot-password': 'Forgot Password?',
+                    'signEmail': 'Email*',
+                    'signName': 'Username*',
+                    'signPassword': 'Password*',
+                    'signup-btn': 'SignUp',
+                    'switch-btn': 'Switch to Spanish'
+                },
+                'es': {
+                    'title': 'SISTEMA DE ALQUILER DE COCHES',
+                    'login': 'iniciar sesión',
+                    'signup': 'registrarse',
+                    'logName': 'Nombre de usuario*',
+                    'logPassword': 'Contraseña*',
+                    'remember': 'Recuérdame',
+                    'login-btn': 'Iniciar sesión',
+                    'forgot-password': '¿Olvidaste tu contraseña?',
+                    'signEmail': 'Correo electrónico*',
+                    'signName': 'Nombre de usuario*',
+                    'signPassword': 'Contraseña*',
+                    'signup-btn': 'Registrarse',
+                    'switch-btn': 'Cambiar a Inglés'
+                }
+            };
+
+            const currentLang = document.getElementById('switchButton').textContent === 'Switch to Spanish' ? 'en' : 'es';
+            const newLang = currentLang === 'en' ? 'es' : 'en';
+
+            document.getElementById('title').textContent = texts[newLang]['title'];
+            document.getElementById('login').textContent = texts[newLang]['login'];
+            document.getElementById('signup').textContent = texts[newLang]['signup'];
+            document.getElementById('logName').placeholder = texts[newLang]['logName'];
+            document.getElementById('logPassword').placeholder = texts[newLang]['logPassword'];
+            document.getElementById('remember-label').textContent = texts[newLang]['remember'];
+            document.getElementById('login-btn').value = texts[newLang]['login-btn'];
+            document.getElementById('forgot-password').textContent = texts[newLang]['forgot-password'];
+            document.getElementById('signEmail').placeholder = texts[newLang]['signEmail'];
+            document.getElementById('signName').placeholder = texts[newLang]['signName'];
+            document.getElementById('signPassword').placeholder = texts[newLang]['signPassword'];
+            document.getElementById('signup-btn').value = texts[newLang]['signup-btn'];
+            document.getElementById('switchButton').textContent = texts[newLang]['switch-btn'];
+        });
+    </script>
+</body>
+</html>

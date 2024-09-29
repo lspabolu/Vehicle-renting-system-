@@ -1,0 +1,303 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Car Rental</title> 
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> 
+    <link rel="stylesheet" href="style.css"> 
+    <style> 
+        input[type=text], input[type=password] { 
+            width: 100%; 
+            padding: 15px; 
+            margin: 5px 0 22px 0; 
+            display: inline-block; 
+            border: none; 
+            background: #f1f1f1; 
+        } 
+        input[type=text]:focus, input[type=password]:focus {
+            background-color: #ddd; 
+            outline: none; 
+        } 
+        button { 
+            background-color: #3f51b5;
+            color: white; 
+            padding: 14px 20px; 
+            margin: 8px 0; 
+            border: none; 
+            cursor: pointer; 
+            opacity: 0.9; 
+        } 
+        button:hover {
+            opacity:1; 
+        } 
+        .cancelbtn { 
+            padding: 14px 20px; 
+            background-color: #f44336; 
+        } 
+        .cancelbtn, .signupbtn { 
+            float: left; 
+            width: 50%; 
+        } 
+        .container { 
+            padding: 16px; 
+        }
+        .modal { 
+            display: none; 
+            position: fixed;
+            z-index: 1; 
+            left: 0; 
+            top: 0;
+            width: 100%; 
+            height: 100%; 
+            overflow: auto; 
+            background-color: #474e5d;
+            padding-top: 50px; 
+        } 
+        .modal-content { 
+            background-color: #fefefe; 
+            margin: 5% auto 15% auto; 
+            border: 1px solid #888; 
+            width: 80%; 
+        } 
+        hr { 
+            border: 1px solid #f1f1f1; 
+            margin-bottom: 25px; 
+        } 
+        .close { 
+            position: absolute; 
+            right: 35px; 
+            top: 15px; 
+            font-size: 40px; 
+            font-weight: bold; 
+            color: #f1f1f1; 
+        } 
+        .close:hover, .close:focus { 
+            color: #f44336; 
+            cursor: pointer; 
+        } 
+        .clearfix::after { 
+            content: ""; 
+            clear: both; 
+            display: table; 
+        } 
+        @media screen and (max-width: 300px) {
+            .cancelbtn, .signupbtn { 
+                width: 100%; 
+            } 
+        }
+        #switchButton {
+            margin: 20px auto;
+            display: block;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+        }
+        #switchButton:hover {
+            background-color: #0056b3;
+        }
+    </style> 
+</head> 
+<body> 
+    <header class="header"> 
+        <a href="#" class="logo"> 
+            <i class="fas fa-car"></i> <span id="title">Vehicle Rental</span> </a> 
+        <div class="icons"> 
+            <a href="loginpage.html" style=" text-decoration:none; font-size:25px; 
+            color: rgb(254, 255, 254); padding: 10px; background-color: #3f51b5;margin-top: 30px; 
+            border: 4px rgb(240, 239, 222) solid; 
+            border-radius:9px;padding: 6px;">LOGIN</a></b> 
+        </div> 
+    </header> 
+    <section class="home" id="home"></section> 
+    <section class="features" id="features"> 
+        <h1 class="heading" id="our-features">our features</h1> 
+        <div class="box-container"> 
+            <div class="box"> 
+                <img src="payment.jpeg" alt=""> 
+                <h3 id="feature1-title">Easy Booking and Payment</h3> 
+                <p id="feature1-desc">Confirm and finalize a reservation with payment details and rental terms. Choose payment method (e.g. credit card, PayPal, etc.)</p> 
+                <a href="loginpage.html" class="btn" id="feature1-btn">Know more</a> 
+            </div> 
+            <div class="box"> 
+                <img src="pickdrop.jpeg" alt=""> 
+                <h3 id="feature2-title">Pickup and Drop off</h3> 
+                <p id="feature2-desc">View pickup and dropoff locations and hours. Check in and check out the vehicle with a rental agent or nearby location.</p> 
+                <a href="loginpage.html" class="btn" id="feature2-btn">Know more</a> 
+            </div> 
+            <div class="box"> 
+                <img src="custcare.png" alt=""> 
+                <h3 id="feature3-title">Customer Service</h3> 
+                <p id="feature3-desc">24/7 Assistance</p> 
+                <p id="feature3-desc2">Get help via phone, email, or chat. Get help with booking or technical issues.</p> 
+                <a href="loginpage.html" class="btn" id="feature3-btn">Know more</a> 
+            </div> 
+        </div> 
+    </section> 
+    <section class="features" id="features"> 
+        <h1 class="heading"><span id="reviews-title">Reviews</span> </h1> 
+        <div class="box-container"> 
+            <div class="box"> 
+                <img src="ironman.jpeg" alt=""> 
+                <p id="review1">Very good car rental service provider company, polite drivers, very good services with comfortable cars and good customer service.</p> 
+                <h3>Iron Man</h3> 
+                <div class="stars"> 
+                    <i class="fas fa-star"></i> 
+                    <i class="fas fa-star"></i> 
+                    <i class="fas fa-star"></i> 
+                    <i class="fas fa-star-half-alt"></i> 
+                </div> 
+            </div> 
+            <div class="box"> 
+                <img src="spider.jpeg" alt=""> 
+                <p id="review2">Nice trip, Enjoyed service and good driver, comfortable car will refer again and again to friend, overall good keep it up.</p> 
+                <h3>Spider Man</h3> 
+                <div class="stars"> 
+                    <i class="fas fa-star"></i> 
+                    <i class="fas fa-star"></i> 
+                    <i class="fas fa-star"></i> 
+                    <i class="fas fa-star"></i> 
+                    <i class="fas fa-star-half-alt"></i> 
+                </div> 
+            </div> 
+            <div class="box"> 
+                <img src="hulk.jpeg" alt=""> 
+                <p id="review3">Great price, service and very convenient. The car was clean and worked fine. It was a great car rental experience.</p> 
+                <h3>Hulk</h3> 
+                <div class="stars"> 
+                    <i class="fas fa-star"></i> 
+                    <i class="fas fa-star"></i> 
+                    <i class="fas fa-star"></i> 
+                    <i class="fas fa-star"></i> 
+                </div> 
+            </div> 
+        </div> 
+    </section> 
+    <section class="footer"> 
+        <div class="box-container"> 
+            <div class="box"> 
+                <h3>Vehicle Rental <i class="fas fa-car"></i></h3> 
+                <p id="footer-desc">Vehicle Rental is a company that rents automobiles for short periods of time to the public, generally ranging from a few hours to a few weeks.</p> 
+                <div class="share"> 
+                    <a href="https://www.facebook.com/" class="fab fa-facebook-f"></a> 
+                    <a href="https://twitter.com/" class="fab fa-twitter"></a> 
+                    <a href="https://www.instagram.com/" class="fab fa-instagram"></a> 
+                    <a href="https://in.linkedin.com/" class="fab fa-linkedin"></a> 
+                </div> 
+            </div> 
+            <div class="box"> 
+                <h3>Contact info</h3> 
+                <a href="#" class="links"> 
+                    <i class="fas fa-phone">+91-8050366123</i></a> 
+                <a href="#" class="links"> 
+                    <i class="fas fa-envelope">sindhup@gmail.com</i></a> 
+                <a href="#" class="links"> 
+                    <i class="fas fa-map-marker-alt">You have been added</i></a> 
+            </div> 
+            <div class="box"> 
+                <h3>Newsletter</h3> 
+                <p id="newsletter-desc">Subscribe for the latest updates</p> 
+                <input type="email" class="email" placeholder="your email"> 
+                <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Subscribe</button> 
+                <div id="id01" class="modal"> 
+                    <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span> 
+                    <form class="modal-content" action=""> 
+                        <div class="container"> 
+                            <h1 align="center">Thank you for subscribing.🙏🙏🙏</h1> 
+                        </div> 
+                    </form> 
+                </div> 
+            </div> 
+        </div> 
+    </section> 
+    <button id="switchButton">Switch to Spanish</button>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script> 
+    <script src="script.js"></script> 
+    <script> 
+        var modal = document.getElementById('id01'); 
+        window.onclick = function(event) { 
+            if (event.target == modal) { 
+                modal.style.display = "none"; 
+                location.reload(); 
+            } 
+        } 
+
+        document.getElementById('switchButton').addEventListener('click', function() {
+            const texts = {
+                'en': {
+                    'title': 'Vehicle Rental',
+                    'our-features': 'our features',
+                    'feature1-title': 'Easy Booking and Payment',
+                    'feature1-desc': 'Confirm and finalize a reservation with payment details and rental terms. Choose payment method (e.g. credit card, PayPal, etc.)',
+                    'feature1-btn': 'Know more',
+                    'feature2-title': 'Pickup and Drop off',
+                    'feature2-desc': 'View pickup and dropoff locations and hours. Check in and check out the vehicle with a rental agent or nearby location.',
+                    'feature2-btn': 'Know more',
+                    'feature3-title': 'Customer Service',
+                    'feature3-desc': '24/7 Assistance',
+                    'feature3-desc2': 'Get help via phone, email, or chat. Get help with booking or technical issues.',
+                    'feature3-btn': 'Know more',
+                    'reviews-title': 'Reviews',
+                    'review1': 'Very good car rental service provider company, polite drivers, very good services with comfortable cars and good customer service.',
+                    'review2': 'Nice trip, Enjoyed service and good driver, comfortable car will refer again and again to friend, overall good keep it up.',
+                    'review3': 'Great price, service and very convenient. The car was clean and worked fine. It was a great car rental experience.',
+                    'footer-desc': 'Vehicle Rental is a company that rents automobiles for short periods of time to the public, generally ranging from a few hours to a few weeks.',
+                    'newsletter-desc': 'Subscribe for the latest updates',
+                    'switch-btn': 'Switch to Spanish'
+                },
+                'es': {
+                    'title': 'Alquiler de Vehículos',
+                    'our-features': 'nuestras características',
+                    'feature1-title': 'Reserva y Pago Fácil',
+                    'feature1-desc': 'Confirme y finalice una reserva con los detalles de pago y los términos de alquiler. Elija el método de pago (por ejemplo, tarjeta de crédito, PayPal, etc.)',
+                    'feature1-btn': 'Saber más',
+                    'feature2-title': 'Recogida y Devolución',
+                    'feature2-desc': 'Vea las ubicaciones y horarios de recogida y devolución. Registre y devuelva el vehículo con un agente de alquiler o en una ubicación cercana.',
+                    'feature2-btn': 'Saber más',
+                    'feature3-title': 'Servicio al Cliente',
+                    'feature3-desc': 'Asistencia 24/7',
+                    'feature3-desc2': 'Obtenga ayuda por teléfono, correo electrónico o chat. Obtenga ayuda con la reserva o problemas técnicos.',
+                    'feature3-btn': 'Saber más',
+                    'reviews-title': 'Reseñas',
+                    'review1': 'Muy buena empresa de alquiler de coches, conductores educados, muy buenos servicios con coches cómodos y buen servicio al cliente.',
+                    'review2': 'Buen viaje, disfruté del servicio y buen conductor, coche cómodo, recomendaré una y otra vez a mis amigos, en general bien, sigan así.',
+                    'review3': 'Gran precio, servicio y muy conveniente. El coche estaba limpio y funcionaba bien. Fue una gran experiencia de alquiler de coches.',
+                    'footer-desc': 'Alquiler de Vehículos es una empresa que alquila automóviles por períodos cortos de tiempo al público, generalmente desde unas pocas horas hasta unas pocas semanas.',
+                    'newsletter-desc': 'Suscríbase para las últimas actualizaciones',
+                    'switch-btn': 'Cambiar a Inglés'
+                }
+            };
+
+            const currentLang = document.getElementById('switchButton').textContent === 'Switch to Spanish' ? 'en' : 'es';
+            const newLang = currentLang === 'en' ? 'es' : 'en';
+
+            document.getElementById('title').textContent = texts[newLang]['title'];
+            document.getElementById('our-features').textContent = texts[newLang]['our-features'];
+            document.getElementById('feature1-title').textContent = texts[newLang]['feature1-title'];
+            document.getElementById('feature1-desc').textContent = texts[newLang]['feature1-desc'];
+            document.getElementById('feature1-btn').textContent = texts[newLang]['feature1-btn'];
+            document.getElementById('feature2-title').textContent = texts[newLang]['feature2-title'];
+            document.getElementById('feature2-desc').textContent = texts[newLang]['feature2-desc'];
+            document.getElementById('feature2-btn').textContent = texts[newLang]['feature2-btn'];
+            document.getElementById('feature3-title').textContent = texts[newLang]['feature3-title'];
+            document.getElementById('feature3-desc').textContent = texts[newLang]['feature3-desc'];
+            document.getElementById('feature3-desc2').textContent = texts[newLang]['feature3-desc2'];
+            document.getElementById('feature3-btn').textContent = texts[newLang]['feature3-btn'];
+            document.getElementById('reviews-title').textContent = texts[newLang]['reviews-title'];
+            document.getElementById('review1').textContent = texts[newLang]['review1'];
+            document.getElementById('review2').textContent = texts[newLang]['review2'];
+            document.getElementById('review3').textContent = texts[newLang]['review3'];
+            document.getElementById('footer-desc').textContent = texts[newLang]['footer-desc'];
+            document.getElementById('newsletter-desc').textContent = texts[newLang]['newsletter-desc'];
+            document.getElementById('switchButton').textContent = texts[newLang]['switch-btn'];
+        });
+    </script> 
+</body> 
+</html>
